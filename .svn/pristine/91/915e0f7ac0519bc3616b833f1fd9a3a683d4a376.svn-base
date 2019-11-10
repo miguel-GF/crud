@@ -1,0 +1,10 @@
+<?php
+	$link=mysqli_connect("pruebas.ecommercetests.com", "pruebasuser", "814H0sNjqB0");
+	mysqli_query($link, "SET NAMES 'utf8'");
+	mysqli_select_db($link, "ecommercepruebas");
+	
+	if (mysqli_connect_errno()) {
+	  die("Connection failed: " . mysqli_connect_error());
+	}
+
+?>

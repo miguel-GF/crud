@@ -1,0 +1,51 @@
+.padding{
+	padding-top: 25px;
+}
+
+.hover{
+	transition: all 1.0s ease;
+	cursor: pointer;
+}
+.hover:hover{
+	opacity: 0.6;
+}
+
+.empleado{
+	background-color: #c4c4d2;
+	border-radius: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.borrar{
+	background-color: #f35033;
+	border-radius: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.nombre{
+	border-radius: 50px;
+	background-color: #dfdeee;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+span{
+	color: white;
+	font-weight: bold;
+}
+
+@media only screen and (min-width: 990px) {
+	.tablaE{
+		max-height: 250px;
+		overflow-y: scroll;
+	}
+}
+/*
+#lenguaje{
+	border-color: transparent;
+	border-bottom-color: rgb(158,158,158);
+	height: 46px;
+}
+*/

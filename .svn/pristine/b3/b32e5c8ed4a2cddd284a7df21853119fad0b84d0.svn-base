@@ -1,0 +1,10 @@
+<?php include("funciones/conexion.php"); ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-commerce Test</title>
+</head>
+<body>
+
+</body>
+</html>

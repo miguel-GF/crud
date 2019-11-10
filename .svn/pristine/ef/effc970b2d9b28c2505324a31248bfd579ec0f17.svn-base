@@ -1,0 +1,68 @@
+<?php include("funciones/conexion.php"); ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-commerce Test</title>
+	<!-- CSS -->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<div class="navbar-fixed">
+    <nav class="blue">
+      <div class="container nav-wrapper">
+        <a href="index.php" class="brand-logo">Ecommerce-Test</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.php">Empleados</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container padding">
+    <a href="empleado.php" class="waves-effect waves-light btn blue hover"><i class="material-icons right">person_add</i>Nuevo</a>
+  </div>
+  <div class="container padding">
+    <table class="striped responsive-table">
+      <caption><h5>Empleados</h5></caption>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Puesto</th>
+          <th>Cursos / %</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $query = mysqli_query($link, "SELECT tbl_empleado.id,nombre, direccion, telefono, puesto, lenguaje, porcentaje FROM tbl_empleado, tbl_datos_economicos, tbl_conocimientos, tbl_lenguajes WHERE tbl_empleado.id=tbl_datos_economicos.tbl_empleado_id AND tbl_empleado.id=tbl_conocimientos.tbl_empleado_id AND tbl_conocimientos.tbl_lenguajes_id=tbl_lenguajes.id");
+        while($row=mysqli_fetch_array($query)){
+          $id=$row['id'];
+          $name=$row['nombre'];
+          $address=$row['direccion'];
+          $phone=$row['telefono'];
+          $occupation=$row['puesto'];
+          $course=$row['lenguaje'];
+          $percentage=$row['porcentaje'];
+          echo "<tr>";
+          echo "<td hidden><input hidden type='text' value='$id'</td>";
+          echo "<td>$name</td> <td>$address</td> <td>$phone</td> <td>$occupation</td> <td>$course - $percentage</td>";
+          echo "<td>
+                  <a href='#'><i class='material-icons hover'>note_add</i></a>
+                  <a href='#'><i class='material-icons hover'>edit</i></a>
+                  <a href='#'><i class='material-icons hover'>delete</i></a>          
+                </td>";
+          echo "</tr>";
+        }
+        ?>
+      </tbody>
+    </table>
+  </div>
+	<!-- JavaScripts -->
+  <script src="js/materialize.js"></script>
+</body>
+</html>

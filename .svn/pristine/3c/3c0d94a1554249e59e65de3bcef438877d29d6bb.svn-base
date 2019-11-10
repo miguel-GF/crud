@@ -1,0 +1,12 @@
+<?php
+	$link=mysqli_connect("pruebas.ecommercetests.com", "pruebasuser", "@1234abcdef@");
+	mysqli_query($link, "SET NAMES 'utf8'");
+	mysqli_select_db($link, "ecommercepruebas");
+	
+	if (mysqli_connect_errno()) {
+	  echo "Error al Conectar a la BD: ".mysqli_connect_error();
+	}
+	else{
+	  echo "Conexión a Base de Datos correcta";
+	}
+?>

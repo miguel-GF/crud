@@ -1,0 +1,16 @@
+.padding{
+	padding-top: 25px;
+	padding-bottom: 10px;
+}
+
+.hover:hover{
+	transition: all 1.0s ease;
+	opacity: 0.6;
+}
+/*
+#lenguaje{
+	border-color: transparent;
+	border-bottom-color: rgb(158,158,158);
+	height: 46px;
+}
+*/
